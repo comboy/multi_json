@@ -93,6 +93,10 @@ shared_examples_for "an adapter" do |adapter|
       MultiJson.load(json).should == {'abc' => 'def'}
     end
 
+    it 'properly loads null' do
+      MultiJson.load('null').should == nil
+    end
+
     it 'allows for symbolization of keys' do
       [
         [
